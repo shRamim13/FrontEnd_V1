@@ -1,0 +1,12 @@
+.styled-button {
+  background-color: #43b8b8;
+  color: white;
+  border-radius: 5px;
+  padding: 10px 40px;
+  font-size: 20px;
+}
+
+ul {
+  margin-left: 20px;
+  list-style-type: disc;
+}

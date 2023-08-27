@@ -1,0 +1,71 @@
+/* Add this to your component's CSS or global styles */
+
+.custom-button {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-right: 10px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .custom-button:hover {
+    background-color: #3498db;
+    color: #fff;
+  }
+  
+  .delete-button:hover {
+    background-color: #e74c3c;
+  }
+  /* Add this to your component's CSS or global styles */
+
+/* .custom-button {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 5px 10px;
+    transition: background-color 0.3s, color 0.3s;
+    background-color: #2980b9;
+    color: #fff;
+  }
+  
+  .custom-button:hover {
+    background-color: #3498db;
+  } */
+  /* Add this to your component's CSS or global styles */
+
+.custom-card {
+    background: rgb(63, 94, 251);
+    background: -moz-radial-gradient(
+      circle,
+      rgba(63, 94, 251, 1) 0%,
+      rgba(70, 226, 252, 0.46262254901960786) 0%,
+      rgba(70, 211, 252, 0.5998774509803921) 100%,
+      rgba(76, 227, 179, 1) 100%
+    );
+    background: -webkit-radial-gradient(
+      circle,
+      rgba(63, 94, 251, 1) 0%,
+      rgba(70, 226, 252, 0.46262254901960786) 0%,
+      rgba(70, 211, 252, 0.5998774509803921) 100%,
+      rgba(76, 227, 179, 1) 100%
+    );
+    background: radial-gradient(
+      circle,
+      rgba(63, 94, 251, 1) 0%,
+      rgba(70, 226, 252, 0.46262254901960786) 0%,
+      rgba(70, 211, 252, 0.5998774509803921) 100%,
+      rgba(76, 227, 179, 1) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(
+      startColorstr='#3f5efb',
+      endColorstr='#4ce3b3',
+      GradientType=1
+    );
+    border-radius: 10px;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  

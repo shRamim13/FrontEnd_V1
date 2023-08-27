@@ -1,0 +1,105 @@
+<h1 class="mt20" style="text-align: center; font-size: 24px">
+  Candidates Information
+</h1>
+
+<div class="bootstrap-wrapper">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="container text-center">
+        <button
+          mat-raised-button
+          [routerLink]="'/admin/add-candidate/' + exId"
+          style="
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+          "
+        >
+          <mat-icon
+            mat-list-icon
+            style="vertical-align: middle; margin-right: 4px"
+            >person_add</mat-icon
+          >
+          Add Candidate
+        </button>
+      </div>
+      <br />
+
+      <table
+        class="mat-elevation-z8 demo-table"
+        style="
+          border-collapse: collapse;
+          width: 100%;
+          background-color: #f9f9f9;
+          text-align: center;
+          margin-bottom: 10px;
+        "
+      >
+        <tr class="head" style="background-color: #333; color: #fff">
+          <th scope="col">#SN</th>
+          <th scope="col">Username</th>
+          <th scope="col">Candidate</th>
+          <th scope="col">Email</th>
+          <th scope="col">Mobile</th>
+          <th scope="col">Update</th>
+          <th scope="col">Delete</th>
+        </tr>
+
+        <tr *ngFor="let u of user; let i = index">
+          <td style="padding: 8px">{{ i + 1 }}.</td>
+          <td style="padding: 8px">{{ u.username }}</td>
+          <td style="padding: 8px">{{ u.firstName + " " + u.lastName }}</td>
+          <td style="padding: 8px">{{ u.email }}</td>
+          <td style="padding: 8px">{{ u.phone }}</td>
+          <td style="padding: 8px">
+            <button
+              mat-button
+              [routerLink]="
+                '/admin/update-candidate/' + u.username + '/' + exId
+              "
+              style="
+                background-color: #28a745;
+                color: #fff;
+                border: none;
+                padding: 8px 16px;
+                border-radius: 4px;
+                cursor: pointer;
+              "
+            >
+              <mat-icon
+                mat-list-icon
+                style="vertical-align: middle; margin-right: 4px"
+                >edit</mat-icon
+              >
+              Edit
+            </button>
+          </td>
+          <td style="padding: 8px">
+            <button
+              mat-button
+              (click)="deleteCandidate(u.id)"
+              style="
+                background-color: #dc3545;
+                color: #fff;
+                border: none;
+                padding: 8px 16px;
+                border-radius: 4px;
+                cursor: pointer;
+              "
+            >
+              <mat-icon
+                mat-list-icon
+                style="vertical-align: middle; margin-right: 4px"
+                >delete</mat-icon
+              >
+              Delete
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,68 @@
+.example-header-image {
+  background-image: url("../../../../assets/document.png");
+  background-size: cover;
+}
+/* Container */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+/* Buttons */
+.custom-button {
+  background-color: #2980b9;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-left: 10px;
+  transition: opacity 0.3s ease;
+}
+
+.custom-button.delete {
+  background-color: #e74c3c;
+}
+
+.custom-button:hover {
+  opacity: 0.8;
+}
+
+/* Cards */
+.custom-card {
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+}
+
+.card-title {
+  font-size: 20px;
+  color: #333;
+  font-weight: bold;
+}
+
+.card-subtitle {
+  color: #777;
+}
+
+.card-content p {
+  color: #777;
+}
+
+/* Card Actions */
+.card-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.card-actions .custom-button:last-child {
+  margin-right: 0;
+}
+
+/* Optional: Adding a background color to the page */
+body {
+  background-color: #f0f0f0;
+}

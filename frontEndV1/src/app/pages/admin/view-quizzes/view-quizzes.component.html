@@ -1,0 +1,137 @@
+<div class="container text-center mt40">
+  <button
+    routerLink="/admin/add-quiz"
+    mat-raised-button
+    style="
+      background-color: #2ecc71;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 5px;
+      padding: 10px 20px;
+    "
+  >
+    <mat-icon mat-list-icon>post_add </mat-icon> Add New Quiz
+  </button>
+</div>
+
+<mat-card
+  class="mt-3 mr-2 mb-3 ml-2 current"
+  *ngFor="let q of quizzes"
+  style="
+    background: rgb(2,0,36);
+    background: -moz-linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(24,209,163,1) 0%, rgba(0,255,218,1) 78%);
+    background: -webkit-linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(24,209,163,1) 0%, rgba(0,255,218,1) 78%);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(24,209,163,1) 0%, rgba(0,255,218,1) 78%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#020024', endColorstr='#00ffda', GradientType=1);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    margin-bottom: 10px;
+  "
+>
+  
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title style="font-size: 20px; color: #333; font-weight: bold">
+      {{ q.title }}
+    </mat-card-title>
+    <mat-card-subtitle style="color: #777">{{
+      q.category.title
+    }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content style="color: #777">
+    <p>{{ q.description }}</p>
+  </mat-card-content>
+
+  <div class="text-right">
+    <button
+      mat-button
+      class="ml20"
+      style="
+        background-color: #2980b9;
+        color: #fff;
+        font-weight: bold;
+        border-radius: 5px;
+        padding: 5px 10px;
+      "
+    >
+      Questions: {{ q.numberOfQuestions }}
+    </button>
+    <button
+      mat-button
+      class="ml20"
+      style="
+        background-color: #2980b9;
+        color: #fff;
+        font-weight: bold;
+        border-radius: 5px;
+        padding: 5px 10px;
+      "
+    >
+      Full Marks: {{ q.maxMarks }}
+    </button>
+  </div>
+
+  <mat-card-actions>
+    <button
+      [routerLink]="'/admin/view-questions/' + q.qId + '/' + q.title"
+      mat-button
+      style="
+        background-color: #3498db;
+        color: #fff;
+        font-weight: bold;
+        border-radius: 5px;
+        padding: 5px 10px;
+        margin-right: 10px;
+      "
+    >
+      <mat-icon mat-list-icon>question_answer </mat-icon> Questions
+    </button>
+
+    <button
+      mat-button
+      class="ml20"
+      style="
+        background-color: #3498db;
+        color: #fff;
+        font-weight: bold;
+        border-radius: 5px;
+        padding: 5px 10px;
+      "
+    >
+      <mat-icon mat-list-icon>visibility </mat-icon> Attempt ({{ q.attempt }})
+    </button>
+
+    <button
+      [routerLink]="'/admin/quiz/' + q.qId"
+      mat-button
+      class="ml20"
+      style="
+        background-color: #3498db;
+        color: #fff;
+        font-weight: bold;
+        border-radius: 5px;
+        padding: 5px 10px;
+      "
+    >
+      <mat-icon mat-list-icon>update </mat-icon> Update
+    </button>
+
+    <button
+      mat-button
+      class="ml10"
+      (click)="deleteQuiz(q.qId)"
+      style="
+        background-color: #e74c3c;
+        color: #fff;
+        font-weight: bold;
+        border-radius: 5px;
+        padding: 5px 10px;
+      "
+    >
+      <mat-icon mat-list-icon>delete </mat-icon> Delete
+    </button>
+  </mat-card-actions>
+</mat-card>
+
+<br /><br />

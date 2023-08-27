@@ -1,0 +1,145 @@
+<div class="bootstrap-wrapper" style="background-color: hsla(247, 45%, 47%, 0.683); padding: 20px">
+  <div class="container">
+    <div class="row" style="margin-top: 5rem">
+      <div class="col-md-6 offset-md-3">
+        <mat-card
+          style="
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(255, 48, 186, 0.382);
+          "
+        >
+          <div class="container text-center">
+            <img src="../../../assets/logo.png" alt="" />
+          </div>
+
+          <h1 class="text-center" style="color: #333">Registration Here !!</h1>
+
+          <form (ngSubmit)="formSubmit()">
+            <div class="row">
+              <div class="col-md-6">
+                <!-- user name -->
+                <mat-form-field class="full-width" appearance="outline">
+                  <mat-label>Username</mat-label>
+                  <input
+                    required
+                    [(ngModel)]="user.username"
+                    name="username"
+                    matInput
+                    placeholder="Enter here"
+                    style="background-color: #f9f9f9"
+                  />
+                </mat-form-field>
+              </div>
+
+              <div class="col-md-6">
+                <!-- password -->
+                <mat-form-field class="full-width" appearance="outline">
+                  <mat-label>Password</mat-label>
+                  <input
+                    required
+                    type="password"
+                    [(ngModel)]="user.password"
+                    name="password"
+                    matInput
+                    placeholder="Enter here"
+                    style="background-color: #f9f9f9"
+                  />
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <!-- first name -->
+                <mat-form-field class="full-width" appearance="outline">
+                  <mat-label>First Name</mat-label>
+                  <input
+                    required
+                    [(ngModel)]="user.firstName"
+                    name="firstName"
+                    matInput
+                    placeholder="Enter here"
+                    style="background-color: #f9f9f9"
+                  />
+                </mat-form-field>
+              </div>
+
+              <div class="col-md-6">
+                <!-- last name -->
+                <mat-form-field class="full-width" appearance="outline">
+                  <mat-label>Last Name</mat-label>
+                  <input
+                    required
+                    [(ngModel)]="user.lastName"
+                    name="lastName"
+                    matInput
+                    placeholder="Enter here"
+                    style="background-color: #f9f9f9"
+                  />
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <!-- email -->
+                <mat-form-field class="full-width" appearance="outline">
+                  <mat-label>Email Address</mat-label>
+                  <input
+                    required
+                    [(ngModel)]="user.email"
+                    name="email"
+                    type="email"
+                    matInput
+                    placeholder="Enter here"
+                    style="background-color: #f9f9f9"
+                  />
+                </mat-form-field>
+              </div>
+
+              <div class="col-md-6">
+                <!-- mobile -->
+                <mat-form-field class="full-width" appearance="outline">
+                  <mat-label>Mobile No</mat-label>
+                  <input
+                    required
+                    type="number"
+                    [(ngModel)]="user.phone"
+                    name="phone"
+                    matInput
+                    placeholder="Enter here"
+                    style="background-color: #f9f9f9"
+                  />
+                </mat-form-field>
+              </div>
+            </div>
+
+            <!-- button -->
+
+            <button type="reset" mat-button style="color: #888">
+              <mat-icon mat-list-icon>restart_alt</mat-icon> Reset
+            </button>
+            <div class="container text-center mt20 mb20">
+              <button
+                type="submit"
+                class="w100"
+                mat-raised-button
+                color="primary"
+                style="
+                  background-color: #4caf50;
+                  color: #fff;
+                  border-radius: 5px;
+                  padding: 10px 20px;
+                "
+              >
+                Register
+              </button>
+            </div>
+          </form>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

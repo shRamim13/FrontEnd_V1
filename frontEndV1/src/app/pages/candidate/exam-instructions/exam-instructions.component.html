@@ -1,0 +1,132 @@
+<div
+  class="bootstrap-wrapper mt"
+  *ngIf="user.obtMarks == 0"
+  style="padding: 20px"
+>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <mat-card
+          class="mt20"
+          style="
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+          "
+        >
+          <mat-card-header
+            style="background-color: #43b8b8; color: white; padding: 20px"
+          >
+            <mat-card-title style="font-size: 28px; font-weight: bold"
+              >Read the instructions carefully</mat-card-title
+            >
+            <mat-card-subtitle style="font-size: 18px"
+              >Just one more step to go</mat-card-subtitle
+            >
+          </mat-card-header>
+
+          <mat-card-content class="ml20">
+            <!-- content  -->
+
+            <h1 style="font-size: 32px; color: #333; margin-top: 30px">
+              {{ title }}
+            </h1>
+            <p style="font-size: 18px; color: #333">
+              {{ user.exam.description }}
+            </p>
+
+            <mat-divider style="margin-top: 30px"></mat-divider>
+            <br />
+            <h1 style="font-size: 28px; color: #333">Important Instructions</h1>
+
+            <ul style="font-size: 18px; color: #333">
+              <!-- Let the time of each question is 2 minutes -->
+              <li>
+                You have to submit within
+                <b>{{ user.exam.numberOfQuestions * 1 }} Minutes.</b>
+              </li>
+              <li>
+                There are <b>{{ user.exam.numberOfQuestions }} questions</b> in
+                this exam.
+              </li>
+              <li>
+                Each question carries
+                <b
+                  >{{
+                    user.exam.maxMarks / user.exam.numberOfQuestions
+                  }}
+                  marks.</b
+                >
+                No negative marking for wrong answers.
+              </li>
+              <li>All questions are of MCQ Type.</li>
+            </ul>
+
+            <mat-divider style="margin-top: 30px"></mat-divider>
+            <br />
+            <h1 style="font-size: 28px; color: #333">Attempting Exam</h1>
+            <ul style="font-size: 18px; color: #333">
+              <li>
+                Click the <b>Start Exam</b> button to begin your exam (the
+                button will be visible on <b>{{ date }}</b
+                >).
+              </li>
+              <li>
+                Your Exam will start at <b>{{ time }}</b
+                >.
+              </li>
+              <li>
+                If you face any issues, please <b>Logout</b> and then
+                <b>Login</b> again.
+              </li>
+              <li>
+                The timer will start as soon as you click the Start Exam button.
+              </li>
+              <li>You cannot resume the exam if interrupted for any reason.</li>
+              <li>Scroll down to move to the next question.</li>
+              <li>Click the Submit button when you finish the exam.</li>
+            </ul>
+          </mat-card-content>
+          <mat-card-actions class="text-center">
+            <!-- actions -->
+            <button
+              *ngIf="date == sysdate"
+              (click)="examTime()"
+              class="mt10 mb10 styled-button"
+              mat-raised-button
+              color="primary"
+            >
+              Start Exam
+            </button>
+          </mat-card-actions>
+        </mat-card>
+        <br /><br />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="bootstrap-wrapper mt"
+  *ngIf="user.obtMarks != 0"
+  id="component1"
+  style="padding: 8rem"
+>
+  <div class="row mt20">
+    <div class="col-md-7 offset-md-3">
+      <mat-card
+        class="text-center mt20"
+        style="
+          background-color: #ffdcdc;
+          border-radius: 10px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        "
+      >
+        <h1 style="color: #ff0000; font-weight: bold; font-size: 32px">
+          You have already participated in this examination, and your submitted
+          result is recorded.
+        </h1>
+      </mat-card>
+    </div>
+  </div>
+</div>

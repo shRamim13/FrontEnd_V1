@@ -1,0 +1,79 @@
+<h1
+  class="mt20"
+  style="
+    font-size: 2.5rem;
+    color: #34495e;
+    text-align: center;
+    padding: 20px;
+    background-color: #eaf0f1;
+  "
+>
+  Questions of {{ qTitle }}
+</h1>
+
+<div class="bootstrap-wrapper" style="background-color: #f4f6f7; padding: 20px">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="container text-center" style="margin-bottom: 20px">
+        <button
+          mat-raised-button
+          [routerLink]="'/admin/add-question/' + qId + '/' + qTitle"
+          style="background-color: #2ecc71; color: #fff"
+        >
+          <mat-icon mat-list-icon>library_add </mat-icon> Add Question
+        </button>
+      </div>
+
+      <mat-card
+        *ngFor="let q of questions; let i = index"
+        class="mt20 current"
+        style="border-radius: 15px; box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1)"
+      >
+        <mat-card-content>
+          <p style="font-weight: 500; font-size: 1.2rem">
+            <b> Q {{ i + 1 }})</b>
+            <span class="ml20" [innerHTML]="q.content"></span>
+          </p>
+
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6">
+                <p><b>1)</b> {{ q.option1 }}</p>
+              </div>
+              <div class="col-md-6">
+                <p><b>2)</b> {{ q.option2 }}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <p><b>3)</b> {{ q.option3 }}</p>
+              </div>
+              <div class="col-md-6">
+                <p><b>4)</b> {{ q.option4 }}</p>
+              </div>
+            </div>
+            <mat-divider></mat-divider>
+            <p class="mt20"><b>Correct Answer:</b> {{ q.answer }}</p>
+          </div>
+        </mat-card-content>
+
+        <mat-card-actions>
+          <button
+            mat-button
+            (click)="deleteQuestion(q.quesId)"
+            style="color: #e74c3c"
+          >
+            <mat-icon mat-list-icon>delete </mat-icon> Delete
+          </button>
+          <button
+            [routerLink]="'/admin/update-question/' + q.quesId"
+            mat-button
+            style="color: #3498db"
+          >
+            <mat-icon mat-list-icon>update </mat-icon> Update
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

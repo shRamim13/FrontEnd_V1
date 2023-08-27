@@ -1,0 +1,142 @@
+<div class="bootstrap-wrapper mt" *ngIf="!isSubmit">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2">
+        <!-- instructions -->
+        <!-- <h3>instructions</h3> -->
+      </div>
+      <div class="col-md-8">
+        <!-- questions -->
+        <ng-container *ngIf="questions">
+          <h1
+            class="mt20"
+            style="
+              font-size: 2.5rem;
+              color: #34495e;
+              text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+              margin-bottom: 20px;
+            "
+          >
+            On Going Exam <b style="color: #e74c3c">{{ user.exam.title }}</b>
+          </h1>
+        </ng-container>
+
+        <mat-card *ngFor="let q of questions; let i = index" class="mt10">
+          <mat-card-content>
+            <p>
+              <b>Q {{ i + 1 }}.</b>
+              <span class="ml10" [innerHTML]="q.content"></span>
+            </p>
+
+            <mat-divider> </mat-divider>
+            <br />
+
+            <div class="row mt20">
+              <div class="col-md-6">
+                <input
+                  type="radio"
+                  [value]="q.option1"
+                  [name]="i.toString()"
+                  [(ngModel)]="q.givenAnswer"
+                />{{ q.option1 }}
+              </div>
+              <div class="col-md-6">
+                <input
+                  type="radio"
+                  [value]="q.option2"
+                  [name]="i.toString()"
+                  [(ngModel)]="q.givenAnswer"
+                />{{ q.option2 }}
+              </div>
+            </div>
+
+            <div class="row mt20">
+              <div class="col-md-6">
+                <input
+                  type="radio"
+                  [value]="q.option3"
+                  [name]="i.toString()"
+                  [(ngModel)]="q.givenAnswer"
+                />{{ q.option3 }}
+              </div>
+              <div class="col-md-6">
+                <input
+                  type="radio"
+                  [value]="q.option4"
+                  [name]="i.toString()"
+                  [(ngModel)]="q.givenAnswer"
+                />{{ q.option4 }}
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+
+        <div class="container text-center mt20 mb20">
+          <button (click)="submitExam()" mat-raised-button color="primary">
+            Submit Exam
+          </button>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <!-- progress -->
+        <mat-card
+          style="
+            margin-top: 70px;
+            position: fixed;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+          "
+        >
+          <mat-card-header style="background-color: #72b843; color: white">
+            <mat-card-title style="font-size: 24px; font-weight: bold"
+              >Progress</mat-card-title
+            >
+            <mat-card-subtitle style="font-size: 16px"
+              >Quiz will automatically be submitted when the timer reaches
+              <b>0:00</b></mat-card-subtitle
+            >
+          </mat-card-header>
+          <mat-card-content class="text-center">
+            <h1 style="font-size: 32px; margin-bottom: 20px">
+              {{ getFormattedTime() }}
+            </h1>
+            <mat-spinner
+              mode="determinate"
+              color="accent"
+              style="margin: auto"
+              [value]="(timer / (this.questions.length * 1 * 60)) * 100"
+            ></mat-spinner>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- show the result -->
+<div
+  class="bootstrap-wrapper mt"
+  *ngIf="isSubmit"
+  id="component1"
+  style="padding: 8rem"
+>
+  <div class="row mt20">
+    <div class="col-md-6 offset-md-3">
+      <mat-card
+        class="text-center mt20"
+        style="
+          background-color: rgba(144, 238, 144, 0.637);
+          color: rgb(1, 53, 1);
+          font-weight: bold;
+        "
+      >
+        <h1>Welcome !!!</h1>
+        <h4>
+          Your submitted result is recorded. The Authority will contact with you
+          later.
+        </h4>
+      </mat-card>
+    </div>
+  </div>
+</div>

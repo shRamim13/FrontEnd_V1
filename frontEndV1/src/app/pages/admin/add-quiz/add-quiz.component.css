@@ -1,0 +1,36 @@
+/* .w100 {
+  width: 100%;
+} */
+.current {
+  background-color: #f8f9fa; /* Lighter shade of gray for background */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #333; /* Dark gray for a bit of contrast */
+  margin-bottom: 30px;
+}
+
+.form-container {
+  background-color: #ffffff; /* Pure white background */
+  border-radius: 10px; /* Rounded corners for the container too */
+  padding: 20px; /* Inner padding */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.form-content {
+  background-color: #ffffff; /* White background to ensure consistency */
+}
+
+.w100 {
+  width: 100% !important;
+  margin-bottom: 20px; /* Space between fields */
+}
+
+.mat-card-actions {
+  justify-content: center; /* Center the buttons */
+  margin-top: 30px; /* Add some space above the buttons */
+}

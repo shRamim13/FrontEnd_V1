@@ -1,0 +1,132 @@
+<div class="bootstrap-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <mat-card class="mt20" style="background-color: #f5f5f5; padding: 20px">
+          <mat-card-header>
+            <!-- heading -->
+            <mat-card-title
+              style="font-size: 24px; font-weight: bold; color: #333"
+            >
+              Read the instructions of this page carefully
+            </mat-card-title>
+            <mat-card-subtitle style="font-size: 18px; color: #777">
+              One step more to go
+            </mat-card-subtitle>
+          </mat-card-header>
+
+          <mat-card-content class="ml20" style="font-size: 16px; color: #555">
+            <!-- content  -->
+
+            <h1 style="font-size: 28px; font-weight: bold; color: #333">
+              {{ quiz.title }}
+            </h1>
+            <p>{{ quiz.description }}</p>
+
+            <mat-divider style="margin: 20px 0"></mat-divider>
+            <br />
+            <h1 style="font-size: 24px; font-weight: bold; color: #333">
+              Important Instructions
+            </h1>
+
+            <ul>
+              <li style="margin-bottom: 10px">
+                This quiz is only for practice purpose.
+              </li>
+
+              <!-- Let the time of each question is 2 minutes -->
+              <li style="margin-bottom: 10px">
+                You have to submit the quiz within
+                <b style="color: #f44336"
+                  >{{ quiz.numberOfQuestions * 2 }} Minutes.</b
+                >
+              </li>
+              <li style="margin-bottom: 10px">
+                You can attempt the quiz only once.
+              </li>
+              <li style="margin-bottom: 10px">
+                There are <b>{{ quiz.numberOfQuestions }} questions</b> in this
+                quiz.
+              </li>
+              <li style="margin-bottom: 10px">
+                Each question carries
+                <b style="color: #f44336"
+                  >{{ quiz.maxMarks / quiz.numberOfQuestions }} marks</b
+                >. No negative marking for wrong answers.
+              </li>
+              <li style="margin-bottom: 10px">
+                All questions are of multiple-choice type.
+              </li>
+            </ul>
+
+            <mat-divider style="margin: 20px 0"></mat-divider>
+            <br />
+            <h1 style="font-size: 24px; font-weight: bold; color: #333">
+              Attempting Quiz
+            </h1>
+            <ul>
+              <li style="margin-bottom: 10px">
+                Click the
+                <b
+                  style="
+                    color: #fff;
+                    background-color: #4caf50;
+                    padding: 5px 10px;
+                    border-radius: 5px;
+                  "
+                  >Start Quiz</b
+                >
+                button to begin the quiz.
+              </li>
+              <li style="margin-bottom: 10px">
+                The timer will start as soon as you click the Start Quiz button.
+              </li>
+              <li style="margin-bottom: 10px">
+                You cannot resume the quiz if interrupted for any reason.
+              </li>
+              <li style="margin-bottom: 10px">
+                Scroll down to move to the next question.
+              </li>
+              <li style="margin-bottom: 10px">
+                Click the
+                <b
+                  style="
+                    color: #fff;
+                    background-color: #f44336;
+                    padding: 5px 10px;
+                    border-radius: 5px;
+                  "
+                  >Submit Quiz</b
+                >
+                button to complete the quiz.
+              </li>
+              <li style="margin-bottom: 10px">
+                A PDF copy of the quiz report will be automatically generated.
+              </li>
+            </ul>
+          </mat-card-content>
+          <mat-card-actions class="text-center">
+            <!-- actions -->
+            <button
+              (click)="startQuiz()"
+              style="
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                font-size: 18px;
+                font-weight: bold;
+                color: #fff;
+                background-color: #4caf50;
+                padding: 10px 20px;
+                border-radius: 5px;
+                cursor: pointer;
+              "
+            >
+              Start QUIZ
+            </button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

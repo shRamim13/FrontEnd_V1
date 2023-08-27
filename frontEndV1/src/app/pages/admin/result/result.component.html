@@ -1,0 +1,48 @@
+<table
+  class="mat-elevation-z8 demo-table"
+  style="
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #f9f9f9;
+    text-align: center;
+  "
+>
+  <tr class="head" style="background-color: #333; color: #fff">
+    <th scope="col">#SN</th>
+    <th scope="col">Username</th>
+    <th scope="col">Candidate</th>
+    <th scope="col">Email</th>
+    <th scope="col">Mobile</th>
+    <th scope="col">Obtained Marks</th>
+    <th scope="col">Send Email</th>
+  </tr>
+
+  <tr *ngFor="let u of user; let i = index">
+    <ng-container *ngIf="u.obtMarks !== undefined">
+      <td style="padding: 8px">{{ i + 1 }}.</td>
+      <td style="padding: 8px">{{ u.username }}</td>
+      <td style="padding: 8px">{{ u.firstName + " " + u.lastName }}</td>
+      <td style="padding: 8px">{{ u.email }}</td>
+      <td style="padding: 8px">{{ u.phone }}</td>
+      <td style="padding: 8px; color: #28a745">{{ u.obtMarks }}</td>
+      <td style="padding: 8px">
+        <button
+          style="
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+          "
+          (click)="sendEmail(u.username)"
+        >
+          <mat-icon style="vertical-align: middle; margin-right: 4px"
+            >send</mat-icon
+          >
+          Send Email
+        </button>
+      </td>
+    </ng-container>
+  </tr>
+</table>

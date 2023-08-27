@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        /* background-color: #fff; */
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: 100vh;
+      }
+
+      .waviy {
+        position: relative;
+        margin-top: 100px;
+      }
+
+      .waviy span {
+        position: relative;
+        display: inline-block;
+        font-size: 60px;
+        color: rgba(51, 51, 51, 0.5);
+        text-transform: uppercase;
+        animation: flip 2s infinite;
+        animation-delay: calc(0.2s * var(--i));
+        font-family: Arial, sans-serif;
+        font-weight: bold;
+      }
+
+      @keyframes flip {
+        0%,
+        80% {
+          transform: rotateY(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="waviy">
+      <span style="--i: 1">W</span>
+      <span style="--i: 2">e</span>
+      <span style="--i: 3">l</span>
+      <span style="--i: 4">c</span>
+      <span style="--i: 5">o</span>
+      <span style="--i: 6">m</span>
+      <span style="--i: 7">e</span>
+      <span style="--i: 8"> </span>
+      <span style="--i: 9">t</span>
+      <span style="--i: 10">o</span>
+      <span style="--i: 11"> </span>
+      <span style="--i: 12">A</span>
+      <span style="--i: 13">D</span>
+      <span style="--i: 14">M</span>
+      <span style="--i: 15">I</span>
+      <span style="--i: 16">N</span>
+      <span style="--i: 17"> </span>
+      <span style="--i: 18">P</span>
+      <span style="--i: 19">a</span>
+      <span style="--i: 20">n</span>
+      <span style="--i: 21">e</span>
+      <span style="--i: 22">l</span>
+    </div>
+  </body>
+</html>

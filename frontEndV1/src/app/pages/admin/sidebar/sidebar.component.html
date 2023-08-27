@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .mat-card {
+        /* position: fixed; */
+        width: 210px;
+        background: rgb(63, 94, 251);
+        background: radial-gradient(
+          circle,
+          rgba(63, 94, 251, 1) 0%,
+          rgba(156, 69, 155, 0.49576327112876406) 100%
+        );
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+
+      .menu-header {
+        padding: 16px;
+        font-size: 20px;
+        font-weight: bold;
+        color: #fff;
+        font-family: "Arial", sans-serif;
+      }
+
+      .menu-item {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 12px;
+        color: #fff;
+        font-family: "Arial", sans-serif;
+        transition: background-color 0.3s ease;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+      }
+
+      .menu-item:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      .menu-item-icon {
+        margin-right: 8px;
+        color: #fff;
+      }
+
+      .menu-item-text {
+        flex: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <mat-card class="mat-card">
+      <mat-action-list>
+        <div class="menu-header">Menu</div>
+
+        <button routerLink="/admin" class="menu-item">
+          <mat-icon class="menu-item-icon">home</mat-icon>
+          <span class="menu-item-text">Home</span>
+        </button>
+
+        <button routerLink="/admin/profile" class="menu-item">
+          <mat-icon class="menu-item-icon">account_circle</mat-icon>
+          <span class="menu-item-text">Profile</span>
+        </button>
+
+        <button routerLink="/admin/exams" class="menu-item">
+          <mat-icon class="menu-item-icon">library_books</mat-icon>
+          <span class="menu-item-text">Exam</span>
+        </button>
+
+        <button routerLink="/admin/add-exam" class="menu-item">
+          <mat-icon class="menu-item-icon">library_add</mat-icon>
+          <span class="menu-item-text">Add Exam</span>
+        </button>
+
+        <button routerLink="/admin/categories" class="menu-item">
+          <mat-icon class="menu-item-icon">list</mat-icon>
+          <span class="menu-item-text">Categories</span>
+        </button>
+
+        <button routerLink="/admin/add-category" class="menu-item">
+          <mat-icon class="menu-item-icon">add_circle_outline</mat-icon>
+          <span class="menu-item-text">Add Categories</span>
+        </button>
+
+        <button routerLink="/admin/quizzes" class="menu-item">
+          <mat-icon class="menu-item-icon">quiz</mat-icon>
+          <span class="menu-item-text">Quizzes</span>
+        </button>
+
+        <button routerLink="/admin/add-quiz" class="menu-item">
+          <mat-icon class="menu-item-icon">post_add</mat-icon>
+          <span class="menu-item-text">Add Quiz</span>
+        </button>
+
+        <!-- <button routerLink="/admin/profile" class="menu-item">
+        <mat-icon class="menu-item-icon">logout</mat-icon>
+        <span class="menu-item-text">Logout</span>
+      </button> -->
+      </mat-action-list>
+    </mat-card>
+  </body>
+</html>

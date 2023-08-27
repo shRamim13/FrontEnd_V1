@@ -1,0 +1,76 @@
+<mat-card
+class="current"
+  style="
+    /* background: linear-gradient(to bottom right, #9375ffbb, #ff7eb3); */
+    border-radius: 10px;
+    font-family: 'Roboto', sans-serif;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  "
+  
+>
+  <h1
+    style="
+      text-align: center;
+      color: #fff;
+      margin-bottom: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    "
+  >
+    All Categories
+  </h1>
+
+  <div class="container text-center mt20">
+    <button
+      routerLink="/admin/add-category"
+      mat-raised-button
+      style="
+        background-color: #7030cf;
+        color: #fff;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        border-radius: 5px;
+        padding: 10px 20px;
+      "
+    >
+      <mat-icon style="vertical-align: middle; margin-right: 10px"
+        >add_circle_outline</mat-icon
+      >
+      Add New Category
+    </button>
+  </div>
+  <!-- Loop through each category -->
+  <div *ngFor="let c of categories">
+    <!-- Individual Category Card -->
+    <mat-card
+  class="category-card"
+  style="
+    background: rgb(63,94,251);
+    background: -moz-radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(86,252,70,0.5998774509803921) 0%, rgba(70,211,252,0.5998774509803921) 100%, rgba(76,227,179,1) 100%);
+    background: -webkit-radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(86,252,70,0.5998774509803921) 0%, rgba(70,211,252,0.5998774509803921) 100%, rgba(76,227,179,1) 100%);
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(86,252,70,0.5998774509803921) 0%, rgba(70,211,252,0.5998774509803921) 100%, rgba(76,227,179,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3f5efb', endColorstr='#4ce3b3', GradientType=1);
+    color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+  "
+>
+      <mat-card-header>
+        <mat-card-title style="font-size: 20px; color: #000; font-weight: bold">
+          <mat-icon style="vertical-align: middle; margin-right: 10px"
+            >file_open</mat-icon
+          >
+          {{ c.title }}
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p style="color: #000">{{ c.description }}</p>
+      </mat-card-content>
+    </mat-card>
+    <mat-divider></mat-divider>
+  </div> </mat-card
+>

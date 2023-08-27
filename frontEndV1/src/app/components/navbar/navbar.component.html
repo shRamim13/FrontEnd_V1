@@ -1,0 +1,115 @@
+<mat-toolbar color="primary" style="background-color: #e91e63; color: white">
+  <a
+    routerLink="/"
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with menu icon"
+  >
+    <mat-icon style="color: white; font-size: 24px">auto_stories</mat-icon>
+  </a>
+  <span style="font-size: 24px; font-weight: bold">QuizWiz</span>
+  <span class="example-spacer"></span>
+
+  <button
+    *ngIf="!isLoggedIn"
+    [routerLink]="'/signup'"
+    mat-button
+    class="example-icon"
+    aria-label="Example icon-button with share icon"
+    style="
+      background-color: #4caf50;
+      color: white;
+      margin-right: 8px;
+      font-size: 16px;
+    "
+  >
+    <mat-icon style="color: white; font-size: 16px">app_registration</mat-icon
+    ><label style="margin-left: 4px">Sign Up</label>
+  </button>
+
+  <button
+    *ngIf="!isLoggedIn"
+    [routerLink]="'/login'"
+    mat-button
+    class="example-icon favorite-icon"
+    aria-label="Example icon-button with heart icon"
+    style="
+      background-color: #2196f3;
+      color: white;
+      margin-right: 8px;
+      font-size: 16px;
+    "
+  >
+    <mat-icon style="color: white; font-size: 16px">login</mat-icon>
+    <label style="margin-left: 4px"> Login</label>
+  </button>
+
+  <button
+    *ngIf="isLoggedIn && user && login.getUserRole() == 'ADMIN'"
+    routerLink="/admin/profile"
+    mat-button
+    class="example-icon favorite-icon"
+    aria-label="Example icon-button with heart icon"
+    style="
+      background-color: #ff5722;
+      color: white;
+      margin-right: 8px;
+      font-size: 16px;
+    "
+  >
+    <mat-icon style="color: white; font-size: 16px">manage_accounts</mat-icon>
+    <label style="margin-left: 4px">{{ user.username }} </label>
+  </button>
+
+  <button
+    *ngIf="isLoggedIn && user && login.getUserRole() == 'NORMAL'"
+    routerLink="/user"
+    mat-button
+    class="example-icon favorite-icon"
+    aria-label="Example icon-button with heart icon"
+    style="
+      background-color: #9c27b0;
+      color: white;
+      margin-right: 8px;
+      font-size: 16px;
+    "
+  >
+    <mat-icon style="color: white; font-size: 16px">manage_accounts</mat-icon>
+    <label style="margin-left: 4px">{{ user.username }} </label>
+  </button>
+
+  <button
+    *ngIf="isLoggedIn && user && login.getUserRole() == 'CANDIDATE'"
+    routerLink="/candidate"
+    mat-button
+    class="example-icon favorite-icon"
+    aria-label="Example icon-button with heart icon"
+    style="
+      background-color: #ffc107;
+      color: white;
+      margin-right: 8px;
+      font-size: 16px;
+    "
+  >
+    <mat-icon style="color: white; font-size: 16px">manage_accounts</mat-icon>
+    <label style="margin-left: 4px">{{ user.username }} </label>
+  </button>
+
+  <button
+    *ngIf="isLoggedIn"
+    (click)="logout()"
+    mat-button
+    class="example-icon favorite-icon"
+    aria-label="Example icon-button with heart icon"
+    style="
+      background-color: #f44336;
+      color: white;
+      margin-right: 8px;
+      font-size: 16px;
+    "
+  >
+    <mat-icon style="color: white; font-size: 16px">logout</mat-icon>
+    <label style="margin-left: 4px"> Logout</label>
+  </button>
+</mat-toolbar>
+<!-- <p>Navbar Works</p> -->

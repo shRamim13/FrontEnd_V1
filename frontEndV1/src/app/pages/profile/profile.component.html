@@ -1,0 +1,100 @@
+<mat-card *ngIf="user" class="current" style="font-family: sans-serif">
+  <h1 style="text-align: center; font-size: 24px; color: #333">
+    Profile Details
+  </h1>
+  <!-- {{ user | json }} -->
+  <mat-card-content>
+    <div class="bootstrap-wrapper">
+      <div class="container">
+        <div class="container text-center">
+          <img
+            src="../../../assets/sabbir.jpg"
+            alt="Sabbir"
+            style="
+              width: 100px;
+              height: 100px;
+              border-radius: 50%;
+              object-fit: cover;
+              border: 2px solid #eee;
+            "
+          />
+
+          <h1 class="mt20" style="font-size: 20px; color: #333">
+            {{ user.firstName }} {{ user.lastName }}
+          </h1>
+        </div>
+
+        <div class="row">
+          <div class="col-md-10 offset-md-1">
+            <!-- //table Details  -->
+            <mat-card class="current">
+              <table
+                class="table text-center"
+                style="width: 100%; margin-bottom: 0"
+              >
+                <tr class="head" style="background-color: #f7f7f7">
+                  <td style="font-weight: bold">Username</td>
+                  <td>{{ user.username }}</td>
+                </tr>
+                <tr>
+                  <td style="font-weight: bold">Email Address</td>
+                  <td>{{ user.email }}</td>
+                </tr>
+                <tr>
+                  <td style="font-weight: bold">Mobile No</td>
+                  <td>{{ user.phone }}</td>
+                </tr>
+                <tr>
+                  <td style="font-weight: bold">Role</td>
+                  <td>{{ user.authorities[0].authority }}</td>
+                </tr>
+                <tr>
+                  <td style="font-weight: bold">Status</td>
+                  <td>{{ user.enabled ? "ACTIVE" : "NOT ACTIVE" }}</td>
+                </tr>
+              </table>
+              <mat-card-actions class="text-center" style="margin-top: 16px">
+                <button
+                  [routerLink]="'/admin/update-profile/' + user.username"
+                  mat-button
+                  style="
+                    background-color: #3498db;
+                    color: #fff;
+                    font-weight: bold;
+                    margin-right: 8px;
+                  "
+                >
+                  <mat-icon style="margin-right: 8px">update</mat-icon> PROFILE
+                  UPDATE
+                </button>
+                <button
+                  [routerLink]="'/admin/security-update/' + user.username"
+                  mat-button
+                  style="
+                    background-color: #e74c3c;
+                    color: #fff;
+                    font-weight: bold;
+                    margin-right: 8px;
+                  "
+                >
+                  <mat-icon style="margin-right: 8px">security</mat-icon>
+                  SECURITY UPDATE
+                </button>
+                <button
+                  mat-button
+                  style="
+                    background-color: #2ecc71;
+                    color: #fff;
+                    font-weight: bold;
+                  "
+                >
+                  <mat-icon style="margin-right: 8px">share</mat-icon> SHARE
+                </button>
+              </mat-card-actions>
+            </mat-card>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
